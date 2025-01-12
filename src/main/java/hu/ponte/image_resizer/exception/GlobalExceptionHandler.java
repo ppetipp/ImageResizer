@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.JsonParseException;
 import hu.ponte.image_resizer.exception.customexcepions.ImageProcessingException;
 import hu.ponte.image_resizer.exception.customexcepions.ImageUploadFailedException;
 import hu.ponte.image_resizer.exception.customexcepions.ImageValidationException;
+import hu.ponte.image_resizer.exception.customexcepions.ResourceNotFoundException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -119,9 +120,18 @@ public class GlobalExceptionHandler {
         logger.error("Image upload failed: ", e);
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
 
-        ApiError body = new ApiError(ERROR_CODE.IMAGE_UPLOAD_FAILED.name(), "Oh, snap! Something really unexpected occurred.", e.getMessage());
+        ApiError body = new ApiError(ERROR_CODE.IMAGE_UPLOAD_FAILED.name(), "Error: image upload failed.", e.getMessage());
 
         return new ResponseEntity<>(body, status);
+    }
+
+    @ExceptionHandler(ResourceNotFoundException.class)
+    public ResponseEntity<ApiError> ResourceNotFoundExceptionHandler(ResourceNotFoundException e) {
+        logger.error("Resource not found: ", e);
+
+        ApiError body = new ApiError(ERROR_CODE.IMAGE_UPLOAD_FAILED.name(), "Error: resource not found.", e.getMessage());
+
+        return new ResponseEntity<>(body, HttpStatus.NOT_FOUND);
     }
 
     @ExceptionHandler(ImageValidationException.class)
