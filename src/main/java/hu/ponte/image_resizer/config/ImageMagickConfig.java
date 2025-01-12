@@ -1,6 +1,7 @@
 package hu.ponte.image_resizer.config;
 
 import org.im4java.core.ConvertCmd;
+import org.im4java.core.IMOperation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -43,5 +44,14 @@ public class ImageMagickConfig {
             cmd.setSearchPath(searchPath);
         }
         return cmd;
+    }
+
+    @Bean
+    public IMOperation defaultOperation() {
+        IMOperation operation = new IMOperation();
+        // Alapértelmezett műveletek beállítása
+        operation.quality(90.0);
+        operation.colorspace("RGB");
+        return operation;
     }
 }
