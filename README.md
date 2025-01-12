@@ -5,7 +5,7 @@ Ez lehetővé teszi a különböző képkezelők használatát.
 
 A feltölthető képek mérete nem lehet nagyobb, mint 10MB.
 
-## Kép átméretezéséhez szükséges csomagok telepítése
+## Kép átméretezéséhez szükséges csomagok telepítése, konfigurálása
 
 ### ImageMagick
 
@@ -13,11 +13,13 @@ A feltölthető képek mérete nem lehet nagyobb, mint 10MB.
 
 Töltsd le és telepítsd a hivatalos oldalról (https://imagemagick.org/script/download.php)
 
-Linux:
+#### Linux
 
 sudo apt-get install imagemagick # Ubuntu/Debian
 
 sudo yum install ImageMagick # CentOS/RHEL
+
+Az elérési utat a `resources/application.properties` fájlban lehet beállítani.
 
 ## Adatbázis konfigurációja
 
