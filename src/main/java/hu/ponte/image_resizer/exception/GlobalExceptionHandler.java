@@ -1,7 +1,9 @@
 package hu.ponte.image_resizer.exception;
 
 import com.fasterxml.jackson.core.JsonParseException;
+import hu.ponte.image_resizer.exception.customexcepions.ImageProcessingException;
 import hu.ponte.image_resizer.exception.customexcepions.ImageUploadFailedException;
+import hu.ponte.image_resizer.exception.customexcepions.ImageValidationException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,6 +120,26 @@ public class GlobalExceptionHandler {
         HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
 
         ApiError body = new ApiError(ERROR_CODE.IMAGE_UPLOAD_FAILED.name(), "Oh, snap! Something really unexpected occurred.", e.getMessage());
+
+        return new ResponseEntity<>(body, status);
+    }
+
+    @ExceptionHandler(ImageValidationException.class)
+    public ResponseEntity<ApiError> ImageValidationExceptionHandler(ImageValidationException e) {
+        logger.error("Image validation failed: ", e);
+        HttpStatus status = HttpStatus.BAD_REQUEST;
+
+        ApiError body = new ApiError(ERROR_CODE.IMAGE_VALIDATION_ERROR.name(), "Image validation failed.", e.getMessage());
+
+        return new ResponseEntity<>(body, status);
+    }
+
+    @ExceptionHandler(ImageProcessingException.class)
+    public ResponseEntity<ApiError> ImageProcessingExceptionHandler(ImageProcessingException e) {
+        logger.error("Image processing failed: ", e);
+        HttpStatus status = HttpStatus.INTERNAL_SERVER_ERROR;
+
+        ApiError body = new ApiError(ERROR_CODE.IMAGE_PROCESSING_ERROR.name(), "An error occurred during image processing.", e.getMessage());
 
         return new ResponseEntity<>(body, status);
     }
