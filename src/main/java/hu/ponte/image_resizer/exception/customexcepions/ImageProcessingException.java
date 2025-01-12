@@ -4,4 +4,8 @@ public class ImageProcessingException extends RuntimeException {
     public ImageProcessingException(String errorMessage, Exception e) {
         super(errorMessage, e);
     }
+
+    public ImageProcessingException(String errorMessage) {
+        super(errorMessage);
+    }
 }
