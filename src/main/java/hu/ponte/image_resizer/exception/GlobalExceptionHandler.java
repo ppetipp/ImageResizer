@@ -137,11 +137,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(ImageValidationException.class)
     public ResponseEntity<ApiError> ImageValidationExceptionHandler(ImageValidationException e) {
         logger.error("Image validation failed: ", e);
-        HttpStatus status = HttpStatus.BAD_REQUEST;
 
         ApiError body = new ApiError(ERROR_CODE.IMAGE_VALIDATION_ERROR.name(), "Image validation failed.", e.getMessage());
 
-        return new ResponseEntity<>(body, status);
+        return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler(ImageProcessingException.class)

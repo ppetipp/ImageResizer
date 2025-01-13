@@ -28,13 +28,23 @@ spring:
       format_sql: true
       dialect: org.hibernate.dialect.PostgreSQLDialect
     generate-ddl: true
+  profiles:
+    active: windows
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 springdoc:
   api-docs:
     path: /api-docs
-  swagger-ui:
-    path: swagger-ui/index.html
-
-
+#  swagger-ui:
+#    path: swagger-ui/index.html
+app:
+  imagemagick:
+    path: C:/Program Files/ImageMagick-7.0.10-Q16/magick.exe
+    temp-dir: tmp
+  image:
+    quality: 92
 logging:
   file:
     name: log/image_resizer.log
