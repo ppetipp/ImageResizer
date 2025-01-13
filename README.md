@@ -3,7 +3,7 @@
 Az átméretezéshez használandó eszközöket az ImageResizer interfészt implementálva lehet a rendszerbe beépíteni.
 Ez lehetővé teszi a különböző képkezelők használatát.
 
-A feltölthető képek mérete nem lehet nagyobb, mint 10MB.
+A feltölthető képek mérete nem lehet nagyobb, mint 2MB.
 
 ## Kép átméretezéséhez szükséges csomagok telepítése, konfigurálása
 
@@ -43,7 +43,16 @@ Továbbá a swagger annotációk a kódban is dokumentálják az API-t.
 Postman környezetben a teszteléshez használható az assets mappában található `ImageResizer.postman_collection.json`
 fájl.
 
+## Bővítési lehetőségek
+
+A feladat leírása nem kért külön jogosultságkezelést, de a jövőben ez is beépíthető a rendszerbe.
+
+Az átmáretezett képeket lehetne egy külön táblában vagy a fájlrendszerben tárolni, több méretben is.
+
 ## Ismert hibák, hiányosságok
 
 Image Magick a következő hibát produkálja:
 `org.im4java.core.CommandException: WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"`
+a képetet nem sikerül átméretezni.
+
+Végül a Graphics2D használatával sikerült megoldani az átméretezést. 

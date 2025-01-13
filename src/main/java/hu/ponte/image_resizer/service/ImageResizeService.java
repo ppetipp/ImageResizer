@@ -31,7 +31,7 @@ public class ImageResizeService {
     private final ImageResizer imageResizer;
     private final ImageRepository imageRepository;
 
-    @Value("${app.image.max-size:10485760}")
+    @Value("${app.image.max-size:2097152}")
     private long maxImageSize;
 
     @Autowired
@@ -172,6 +172,7 @@ public class ImageResizeService {
     private boolean isAllowedContentType(String contentType) {
         return Arrays.asList(
                 "image/jpg",
+                "image/jpeg",
                 "image/png",
                 "application/pdf"
         ).contains(contentType);
