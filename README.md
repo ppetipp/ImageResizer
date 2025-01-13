@@ -43,4 +43,7 @@ Továbbá a swagger annotációk a kódban is dokumentálják az API-t.
 Postman környezetben a teszteléshez használható az assets mappában található `ImageResizer.postman_collection.json`
 fájl.
 
-## Tesztek, tesztlefedettség
+## Ismert hibák, hiányosságok
+
+Image Magick a következő hibát produkálja:
+`org.im4java.core.CommandException: WARNING: The convert command is deprecated in IMv7, use "magick" instead of "convert" or "magick convert"`

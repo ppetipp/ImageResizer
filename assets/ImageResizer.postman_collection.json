@@ -1,165 +1,261 @@
 {
-  "info": {
-    "_postman_id": "2a837932-637d-479f-a181-f16bf13b4ca4",
-    "name": "ImageResizer",
-    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "38599805"
-  },
-  "item": [
-    {
-      "name": "upload single file ok",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "multipart/form-data",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "file",
-              "type": "file",
-              "src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok.png"
-            }
-          ]
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/images/upload/single",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "images",
-            "upload",
-            "single"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "upload single file wrong type",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "multipart/form-data",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "file",
-              "type": "file",
-              "src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/wrong_type.jpg"
-            }
-          ]
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/images/upload/single",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "images",
-            "upload",
-            "single"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "upload single file big",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "multipart/form-data",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "file",
-              "type": "file",
-              "src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/big.jpeg"
-            }
-          ]
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/images/upload/single",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "images",
-            "upload",
-            "single"
-          ]
-        }
-      },
-      "response": []
-    },
-    {
-      "name": "upload multiple file",
-      "request": {
-        "method": "POST",
-        "header": [
-          {
-            "key": "Content-Type",
-            "value": "multipart/form-data",
-            "type": "text"
-          }
-        ],
-        "body": {
-          "mode": "formdata",
-          "formdata": [
-            {
-              "key": "files",
-              "type": "file",
-              "src": [
-                "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok.png",
-                "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok2.png"
-              ]
-            }
-          ]
-        },
-        "url": {
-          "raw": "http://localhost:8080/api/images/upload/multiple",
-          "protocol": "http",
-          "host": [
-            "localhost"
-          ],
-          "port": "8080",
-          "path": [
-            "api",
-            "images",
-            "upload",
-            "multiple"
-          ]
-        }
-      },
-      "response": []
-    }
-  ]
+	"info": {
+		"_postman_id": "2a837932-637d-479f-a181-f16bf13b4ca4",
+		"name": "ImageResizer",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38599805"
+	},
+	"item": [
+		{
+			"name": "upload single file ok",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/images/upload/single",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"upload",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload single file wrong type",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/wrong_type.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/images/upload/single",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"upload",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload single file big",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/C:/Users/parpet/IdeaProjects/ImageResizer/assets/big.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/images/upload/single",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"upload",
+						"single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "upload multiple file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "files",
+							"type": "file",
+							"src": [
+								"/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok.png",
+								"/C:/Users/parpet/IdeaProjects/ImageResizer/assets/ok2.png"
+							]
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/images/upload/multiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"upload",
+						"multiple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "resize file",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"width\": 700,\r\n  \"height\": 549\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/images/1/resize",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"1",
+						"resize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get original file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/images/1/original",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"1",
+						"original"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get processed file",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "multipart/form-data",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/images/1/original",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"images",
+						"1",
+						"original"
+					]
+				}
+			},
+			"response": []
+		}
+	]
 }

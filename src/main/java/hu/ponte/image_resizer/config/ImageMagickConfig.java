@@ -24,6 +24,7 @@ public class ImageMagickConfig {
     @Profile("windows")
     public ConvertCmd windowsConvertCmd() {
         ConvertCmd cmd = new ConvertCmd();
+        cmd.setCommand("magick");
 
         if (searchPath.isEmpty()) {
             cmd.setSearchPath(searchPathDefaultWindows);
@@ -49,7 +50,7 @@ public class ImageMagickConfig {
     @Bean
     public IMOperation defaultOperation() {
         IMOperation operation = new IMOperation();
-        // Alapértelmezett műveletek beállítása
+
         operation.quality(90.0);
         operation.colorspace("RGB");
         return operation;
